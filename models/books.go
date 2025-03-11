@@ -46,7 +46,7 @@ func GetBooks(db *sql.DB) ([]Book, error) {
 	results, err := db.Query("SELECT * FROM book")
 	fmt.Printf("results %v", results)
 	if err != nil {
-		return nil, fmt.Errorf("Err", err.Error())
+		return nil, fmt.Errorf("Err %v", err.Error())
 	}
 
 	for results.Next() {
