@@ -32,6 +32,21 @@ jobs:
 
     - name: Test
       run: go test -v ./...
+
+  integration-tests:
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        path: main
+
+    - name: Checkout tools repo
+      uses: actions/checkout@v4
+      with:
+        repository: https://github.com/martinpmathew/inventory_tests
+      run: |
+        pwd
+        pytest
+
   # build-and-push-image:
   #   needs: build
   #   runs-on: ubuntu-latest
