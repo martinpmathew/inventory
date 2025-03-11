@@ -41,7 +41,7 @@ jobs:
     - name: Checkout test repo
       uses: actions/checkout@v4
       with:
-        repository: https://github.com/martinpmathew/inventory_tests
+        repository: martinpmathew/inventory_tests
     
     - name: execute test case
       run: |
