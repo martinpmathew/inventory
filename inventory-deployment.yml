@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: inventory
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: inventory-app
+  template:
+    metadata:
+      labels:
+        app: inventory-app
+    spec:
+      containers:
+      - name: inventory
+        image: inventory:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+        env:
+          - name: DB_HOST
+            value: "localhost:3306"
+          - name: DB_USER
+            value: "root"
+          - name: DB_PASS
+            value: "pass"
+          - name: DB_NAME
+            value: "recordings"
+      - name: mysql
+        image: mysql:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 3306
+        env:
+          - name: MYSQL_DATABASE
+            value: "recordings"
+          - name: MYSQL_ROOT_PASSWORD
+            value: "pass"

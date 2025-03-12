@@ -33,6 +33,12 @@ services:
       interval: 2s
       timeout: 2s
       retries: 10
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./mysql-config:/etc/mysql/conf.d
+
+volumes:
+  db_data:
 
 networks:
   mynet:

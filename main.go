@@ -58,7 +58,7 @@ func main() {
 
 	_, err = db.Exec("CREATE TABLE book (id         INT AUTO_INCREMENT NOT NULL, title      VARCHAR(128) NOT NULL, writer     VARCHAR(255) NOT NULL, price      DECIMAL(5,2) NOT NULL, PRIMARY KEY (`id`));")
 	if err != nil {
-		panic(err)
+		fmt.Printf("Err %v", err)
 	}
 
 	// // Create
