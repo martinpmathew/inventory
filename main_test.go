@@ -17,7 +17,7 @@ func TestPostMethod(t *testing.T) {
 	// Setup your router, just like you did in your main function, and
 	// register your routes
 	r := gin.Default()
-	r.POST("/", PostAlbums)
+	r.POST("/", postAlbums)
 
 	// Create the mock request you'd like to test. Make sure the second argument
 	// here is the same as one of the routes you defined in the router setup
@@ -49,7 +49,7 @@ func TestGetMethod(t *testing.T) {
 	// Setup your router, just like you did in your main function, and
 	// register your routes
 	r := gin.Default()
-	r.GET("/", GetAlbums)
+	r.GET("/", getAlbums)
 
 	// Create the mock request you'd like to test. Make sure the second argument
 	// here is the same as one of the routes you defined in the router setup
@@ -81,7 +81,7 @@ func TestGetIDMethod(t *testing.T) {
 	// Setup your router, just like you did in your main function, and
 	// register your routes
 	r := gin.Default()
-	r.GET("/", GetAlbumByID)
+	r.GET("/", getAlbumByID)
 
 	// Create the mock request you'd like to test. Make sure the second argument
 	// here is the same as one of the routes you defined in the router setup
